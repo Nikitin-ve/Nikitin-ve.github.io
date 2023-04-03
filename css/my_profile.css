@@ -1,4 +1,4 @@
-body {
+.page {
     margin: 0;
     font-size: 100%;
     font-weight: normal;
@@ -14,14 +14,24 @@ body {
     display: flex;
     justify-content: space-around;
     background-color: yellow;
+    align-items: center;
 }
-.hello__image {
+
+.image {
     height: 40%;
     width: 40%;
-    margin: 3%;
     box-shadow: 4px 4px 5px black;
 }
-.hello__text {
+
+.header__image {
+    margin: 3%;
+}
+
+.text {
+    font-size: 16px;
+}
+
+.header__text {
     display: flex;
     margin: auto;
     width: 25%;
@@ -31,7 +41,8 @@ body {
     align-items: center;
     box-shadow: 4px 4px 5px black;
 }
-.hello__text__p {
+
+.greetings {
     display: flex;
     color: white;
     font-size: 120%;
@@ -39,38 +50,41 @@ body {
 }
 
 .content {
-    margin-top: 5vw;
     display: flex;
     justify-content: space-around;
     background-color: yellow;
     align-items: center;
 }
+
+.page__content {
+    margin-top: 5vw;
+}
+
 .card {
     width: 350px;
-    margin-bottom: 60px;
     padding: 45px 45px 70px;
     display: inline-block;
-    margin-right: 90px;
     box-shadow: 4px 4px 5px yellow;
     background-color: yellow;
 }
-.no-right-margin {
-    margin-right: 0;
+
+.content__card {
+    margin-bottom: 60px;
 }
-.card-title {
+
+.title {
     font-size: 24px;
     font-weight: 500;
+}
+
+.card__title {
     margin-bottom: 10px;
 }
-.card-text {
-    font-size: 16px;
-}
-.card-image {
-    height: 40%;
-    width: 40%;
+
+.content__image {
     margin: 3%;
-    box-shadow: 4px 4px 5px black;
 }
+
 .footer {
     padding-left: 4%;
     height: 8vh;
@@ -80,17 +94,23 @@ body {
     flex-direction: column;
     background-color: black;
 }
+
 .footer-author {
     color: white;
     font-size: 24px;
-    margin: auto;
     padding-top: 3vw;
 }
-.footer__contact {
+
+.footer__footer-author {
+    margin: auto;
+}
+
+.contact {
     display: flex;
     background-color: black;
     justify-content: flex-end;
 }
+
 .link {
     display: flex;
     width: 6vw;
@@ -98,16 +118,22 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-.telegram {
-    background-image: url(https://phonoteka.org/uploads/posts/2022-09/1663789307_3-phonoteka-org-p-znachok-telegramma-bez-fona-krasivo-4.png);
-    background-size: cover;
+
+.social {
     background-repeat: no-repeat;
-    margin: 3vw;
 }
-.vk {
-    background-image: url(https://free-png.ru/wp-content/uploads/2022/02/free-png.ru-306.png);
+
+.social_name_telegram {
+    background-image: url(/photo/telegram.png);
     background-size: cover;
-    background-repeat: no-repeat;
+}
+
+.social_name_vk {
+    background-image: url(/photo/vk.png);
+    background-size: 85%;
     background-position: center;
+}
+
+.contact__social {
     margin: 3vw;
 }

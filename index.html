@@ -7,34 +7,36 @@
     <meta name="keywords" content="html, css">
     <meta name="author" content="Владимир Никитин">
     <meta property="og:image" content="photo/vladimir1.jpeg">
+    <meta itemprop="name" content="Владимир Никитин">
+    <meta itemprop="image" content="css/my_profile.css">
     <link rel="stylesheet" href="css/my_profile.css">
     <title>Владимир Никитин</title>
-    <link rel="icon" type="image/ico" href="https://code.s3.yandex.net/web-code/rules-favicon.ico">
+    <link rel="icon" type="image/ico" href="/photo/icon.png">
 </head>
-<body>
-<header class="header">
-    <div class="hello__text">
-        <p class="hello__text__p">Привет! Я Владимир Никитин</p>
-    </div>
-    <img class="hello__image" src="photo/vladimir1.jpeg" alt="Моё фото">
-</header>
-<section class="content">
-    <img src="photo/vladimir2.jpeg" class="card-image" alt="Я на лыжах">
-    <div class="card no-right-margin">
-        <h3 class="card-title">Немного обо мне</h3>
-        <p class="card-text">Я учусь в МФТИ на факультете Высшая школа программной инженерией, будущий фулл-стек разработчик. Вдохновляет девушка, волейбол и друзья. Нет опыта работы</p>
-    </div>
-</section>
-<footer class="footer">
-    <h4 class="footer-author">Связь со мной</h4>
-    <div class="footer__contact">
-        <div class="telegram">
-            <a href="https://t.me/rus_56_77" aria-label="Ссылка на Telegram" class="link"></a>
+<body class="page">
+    <header class="header">
+        <div class="text header__text">
+            <p class="greetings">Привет! Я Владимир Никитин</p>
         </div>
-        <div class="vk">
-            <a href="https://vk.com/n_i_k_i_t_i_n__v" aria-label="Ссылка на VK" class="link"></a>
-        </div>
-    </div>
-</footer>
+        <img class="image header__image" src="photo/vladimir1.jpeg" alt="Моё фото">
+    </header>
+    <main class="content page__content">
+        <img src="photo/vladimir2.jpeg" class="image content__image" alt="Я на лыжах">
+        <section class="card content__card">
+            <h3 class="title card__title">Немного обо мне</h3>
+            <p class="text">Я учусь в МФТИ на факультете Высшая школа программной инженерией, будущий фулл-стек разработчик. Вдохновляет девушка, волейбол и друзья. Нет опыта работы</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <h4 class="footer-author footer__footer-author">Связь со мной</h4>
+        <section class="contact">
+            <div class="social social_name_telegram contact__social">
+                <a href="https://t.me/rus_56_77" aria-label="Ссылка на Telegram" class="link"></a>
+            </div>
+            <div class="social social_name_vk contact__social">
+                <a href="https://vk.com/n_i_k_i_t_i_n__v" aria-label="Ссылка на VK" class="link"></a>
+            </div>
+        </section>
+    </footer>
 </body>
 </html>
