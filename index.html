@@ -11,23 +11,43 @@
     <title>Владимир Никитин</title>
     <link rel="icon" type="image/ico" href="/photo/icon.png">
 </head>
-<body class="page">
-    <header class="header">
-        <div class="text header__text">
-            <p class="greetings">Привет! Я Владимир Никитин</p>
+<body class="page page_light">
+    <header class="header header_light">
+        <div class="text header__text header__text_light">
+            <p class="greetings greetings_light">Привет! Я Владимир Никитин</p>
         </div>
         <img class="image header__image" src="photo/vladimir1.jpeg" alt="Моё фото">
     </header>
-    <main class="content page__content">
+    <main class="content content_light page__content">
         <img src="photo/vladimir2.jpeg" class="image content__image" alt="Я на лыжах">
-        <section class="card content__card">
+        <section class="card card_light content__card">
             <h3 class="title card__title">Немного обо мне</h3>
             <p class="text">Я учусь в МФТИ на факультете Высшая школа программной инженерией, будущий фулл-стек разработчик. Вдохновляет девушка, волейбол и друзья. Нет опыта работы</p>
         </section>
     </main>
-    <footer class="footer">
-        <h4 class="footer-author footer__footer-author">Связь со мной</h4>
-        <section class="contact">
+    <div class="message-popup">
+        <div class="message-popup__container">
+            <p class="message-popup__text">Привет!</p>
+            <button class="message-popup__close-button"></button>
+        </div>
+    </div>
+    <div class="popup popup_light">
+        <div class="popup__container">
+            <img class="popup__photo popup__photo_left" src="photo/free-icon-arrowhead-thin-outline-to-the-left-32542.png">
+            <img class="popup__photo_center" src="">
+            <img class="popup__photo popup__photo_right" src="photo/free-icon-arrow-point-to-right-32213.png">
+        </div>
+    </div>
+    <article class="gallery">
+        <div class="gallery-list">
+            <img src="photo/super.jpeg" class="gallery__picture_horizontal popup-data__image" loading="lazy">
+            <img src="photo/vladimir1.jpeg" class="gallery__picture_vertical popup-data__image" loading="lazy">
+            <img src="photo/vladimir2.jpeg" class="gallery__picture_horizontal popup-data__image" loading="lazy">
+        </div>
+    </article>
+    <footer class="footer footer_light">
+        <h4 class="footer-author footer-author_light footer__footer-author">Связь со мной</h4>
+        <section class="contact contact_light">
             <div class="social social_name_telegram contact__social">
                 <a href="https://t.me/rus_56_77" aria-label="Ссылка на Telegram" class="link"></a>
             </div>
@@ -35,6 +55,32 @@
                 <a href="https://vk.com/n_i_k_i_t_i_n__v" aria-label="Ссылка на VK" class="link"></a>
             </div>
         </section>
+        <div class="buttons">
+            <button name="SendFeedback" class="button footer__feedback-button"></button>
+            <button name="ActivateRain" class="button footer__rain-button footer__rain-button_light"></button>
+            <button class="button header__theme-button header__theme-button_light" name="ChangeTheme"></button>
+        </div>
     </footer>
+    <div class="popup form-popup">
+        <div class="form-popup__container form-popup__container_light">
+            <form class="form form-popup__form_feedback" novalidate>
+                <h2 class="form-popup__heading form-popup__heading_light">Свяжитесь со мной!</h2>
+                <fieldset class="form-popup__input-container">
+                    <label for="phone" class="form-popup__label">Телефон</label>
+                    <input id="phone" placeholder="79999999999" type="tel" class="form-popup__input" maxlength="11">
+                    <span class="form-popup__error tel-input-error">Номер телефона должен состоять из 11 цифр</span>
+                    <label for="email" class="form-popup__label">Email</label>
+                    <input id="email" placeholder="ivan@yandex.ru" type="email" class="form-popup__input" required>
+                    <span class="form-popup__error email-input-error">Пожалуйста, проверьте, правильно ли указан email</span>
+                    <label for="text" class="form-popup__label">Напишите сюда ваш текст</label>
+                    <textarea id="text" rows=8 class="form-popup__input" spellcheck="true"></textarea>
+                    <span class="form-popup__error text-input-error"></span>
+                </fieldset>
+                <input type="submit" value="Отправить" class="button form-popup__submit-button button_inactive" disabled>
+            </form>
+        </div>
+    </div>
+    <div class="rain rain_animation"></div>
+<script src="scripts/scripts.js"></script>
 </body>
 </html>
