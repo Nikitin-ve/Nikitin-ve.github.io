@@ -169,9 +169,10 @@ function messagePopupClose() {
     })
 }
 
-messagePopupButton.addEventListener('click', function(evt) {
-    if (evt.target === messagePopupButton) {
-        messagePopupClose(messagePopupButton);
+const messagePopup = document.querySelector(".message-popup");
+messagePopup.addEventListener('click', function(evt) {
+    if (evt.target === messagePopup) {
+        closePopup(messagePopup);
     }
     evt.stopPropagation();
 });
