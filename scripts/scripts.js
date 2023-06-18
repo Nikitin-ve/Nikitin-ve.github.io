@@ -96,7 +96,6 @@ const popupLeftLink = document.querySelector(".popup__photo_left");
 const popupRightLink = document.querySelector(".popup__photo_right");
 
 images.forEach(function(imageElement) {
-    console.log(-1);
     const link = imageElement.src;
     imageElement.addEventListener('click', function() {
         popupImg.src = link;
@@ -159,7 +158,7 @@ function messagePopupOpen() {
 
 function sendMessage() {
     if (!localStorage.getItem("send-flag")) {
-        setTimeout(messagePopupOpen, 30000);
+        setTimeout(messagePopupOpen, 3000);
     }
 }
 function messagePopupClose() {
@@ -170,6 +169,12 @@ function messagePopupClose() {
     })
 }
 
+messagePopupButton.addEventListener('click', function(evt) {
+    if (evt.target === messagePopupButton) {
+        messagePopupClose(messagePopupButton);
+    }
+    evt.stopPropagation();
+});
 
 
 

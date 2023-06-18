@@ -275,12 +275,12 @@
 }
 
 .social_name_telegram {
-    background-image: url(/photo/telegram.png);
+    background-image: url("../photo/telegram.png");
     background-size: cover;
 }
 
 .social_name_vk {
-    background-image: url(/photo/vk.png);
+    background-image: url("../photo/vk.png");
     background-size: 85%;
     background-position: center;
 }
@@ -447,7 +447,7 @@
     outline: none;
     cursor: pointer;
     background-color: #000000;
-    background-image: url(../photo/free-icon-close-3926754.png);
+    background-image: url("../photo/free-icon-close-3926754.png");
     background-size: cover;
 }
 
@@ -474,7 +474,7 @@
     left: 0;
     height: 200vh;
     width: 100vw;
-    background-image: url(../photo/pngwing.com.png);
+    background-image: url("../photo/pngwing.com.png");
     opacity: 0.8;
 }
 
