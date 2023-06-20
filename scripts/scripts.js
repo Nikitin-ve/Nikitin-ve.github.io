@@ -52,6 +52,26 @@ function ChangeTheme() {
     elem = document.querySelector(".form-popup__heading");
     elem.classList.toggle('form-popup__heading_dark');
     elem.classList.toggle('form-popup__heading_light');
+
+    elem = document.querySelector(".textjs1");
+    elem.classList.toggle('text');
+    elem.classList.toggle('text_dark');
+
+    elem = document.querySelector(".textjs2");
+    elem.classList.toggle('text');
+    elem.classList.toggle('text_dark');
+
+    elem = document.querySelector(".textjs3");
+    elem.classList.toggle('text');
+    elem.classList.toggle('text_dark');
+
+    elem = document.querySelector(".textjs4");
+    elem.classList.toggle('text');
+    elem.classList.toggle('text_dark');
+
+    elem = document.querySelector(".textjs5");
+    elem.classList.toggle('text');
+    elem.classList.toggle('text_dark');
 }
 
 themeBtn.addEventListener("click", ChangeTheme);
@@ -147,6 +167,7 @@ function closePopup(popup) {
 
 
 const messagePopupButton = document.querySelector(".message-popup__close-button");
+const messagePopup = document.querySelector(".message-popup");
 
 sendMessage()
 messagePopupClose()
@@ -158,24 +179,23 @@ function messagePopupOpen() {
 
 function sendMessage() {
     if (!localStorage.getItem("send-flag")) {
-        setTimeout(messagePopupOpen, 30000);
+        setTimeout(messagePopupOpen, 300);
     }
 }
 function messagePopupClose() {
-    messagePopupButton.addEventListener('click', function () {
+    messagePopup.addEventListener('click', function(evt) {
+        if (evt.target === messagePopup) {
+            const popupHello = document.querySelector(".message-popup_active");
+            popupHello.classList.remove("message-popup_active");
+        }
+        evt.stopPropagation();
+    });
+    messagePopupButton.addEventListener('click', function (evt) {
         localStorage.setItem("send-flag", "true");
         const popupHello = document.querySelector(".message-popup_active");
         popupHello.classList.remove("message-popup_active");
-    })
+    });
 }
-
-const messagePopup = document.querySelector(".message-popup");
-messagePopup.addEventListener('click', function(evt) {
-    if (evt.target === messagePopup) {
-        closePopup(messagePopup);
-    }
-    evt.stopPropagation();
-});
 
 
 
@@ -253,13 +273,19 @@ form.addEventListener('submit', function (evt) {
 
 enableValidation(form)
 
-const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-const phonePattern = /^\d{11}$/;
+const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}$/;
+const phonePattern = /^[+]{0,1}\d{11}$/;
+const textPatternEN = /[a-zA-Z]/;
+const textPatternRU = /[а-яА-я]/;
 
 function isValid(inputElement, spanError) {
+    console.log(inputElement.value.search(textPatternEN));
+    console.log(inputElement.value.search(textPatternRU));
     if (!inputElement.validity.valid ||
         (inputElement.type === "tel" && !phonePattern.test(inputElement.value) ||
-            (inputElement.type === "email" && !emailPattern.test(inputElement.value)))) {
+            (inputElement.type === "email" && !emailPattern.test(inputElement.value) ||
+                inputElement.id === "text" && (inputElement.value.search(textPatternEN) !== -1 &&
+                    inputElement.value.search(textPatternRU) !== -1)))) {
         showInputError(inputElement, spanError);
     } else {
         hideInputError(inputElement, spanError);
