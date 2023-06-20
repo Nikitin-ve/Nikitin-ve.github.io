@@ -179,7 +179,7 @@ function messagePopupOpen() {
 
 function sendMessage() {
     if (!localStorage.getItem("send-flag")) {
-        setTimeout(messagePopupOpen, 300);
+        setTimeout(messagePopupOpen, 30000);
     }
 }
 function messagePopupClose() {
