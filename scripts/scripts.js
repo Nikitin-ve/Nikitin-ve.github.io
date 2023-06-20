@@ -170,7 +170,6 @@ const messagePopupButton = document.querySelector(".message-popup__close-button"
 const messagePopup = document.querySelector(".message-popup");
 
 sendMessage()
-messagePopupClose()
 
 function messagePopupOpen() {
     const popupMessage = document.querySelector(".message-popup");
@@ -179,23 +178,24 @@ function messagePopupOpen() {
 
 function sendMessage() {
     if (!localStorage.getItem("send-flag")) {
-        setTimeout(messagePopupOpen, 30000);
+        setTimeout(messagePopupOpen, 3000);
     }
 }
-function messagePopupClose() {
-    messagePopup.addEventListener('click', function(evt) {
-        if (evt.target === messagePopup) {
-            const popupHello = document.querySelector(".message-popup_active");
-            popupHello.classList.remove("message-popup_active");
-        }
-        evt.stopPropagation();
-    });
-    messagePopupButton.addEventListener('click', function (evt) {
+
+messagePopup.addEventListener('click', function(evt) {
+    if (evt.target === messagePopup) {
         localStorage.setItem("send-flag", "true");
         const popupHello = document.querySelector(".message-popup_active");
         popupHello.classList.remove("message-popup_active");
-    });
-}
+    }
+    evt.stopPropagation();
+});
+
+messagePopupButton.addEventListener('click', function (evt) {
+    localStorage.setItem("send-flag", "true");
+    const popupHello = document.querySelector(".message-popup_active");
+    popupHello.classList.remove("message-popup_active");
+});
 
 
 
